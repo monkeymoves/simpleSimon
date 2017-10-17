@@ -1,0 +1,19 @@
+.simon-button{
+    height: 48px;
+    width: 48px;
+    cursor: pointer; 
+}
+
+
+#red{
+    background: red;
+}
+#yellow{
+    background: yellow;
+}
+#green{
+    background: green
+}
+#blue{
+    background: blue;
+}
