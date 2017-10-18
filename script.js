@@ -1,7 +1,7 @@
-const RED = "RED";
-const BLUE = "BLUE";
-const GREEN = "GREEN";
-const YELLOW = "YELLOW";
+const RED = "red";
+const BLUE = "blue";
+const GREEN = "green";
+const YELLOW = "yellow";
 
 var simon = {
 
@@ -50,9 +50,21 @@ var simon = {
         console.log("random color is ", nextColor);  
         simon.sequence.push(nextColor);
         console.log("the seq is ", simon.sequence)
+        lightup(simon.sequence)
       
     }
 };
+
+function lightup(seq){
+    for(var i =0; i < seq.length; i++){
+        console.log("yesy yes" + seq[i]);
+        let seqselect = (seq[i]);
+        document.getElementById(seqselect).classList.add('simon-flash');
+
+    }
+}
+
+
 
 
 $(document).ready(function () {

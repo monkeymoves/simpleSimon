@@ -1,7 +1,19 @@
 .simon-button{
     height: 48px;
     width: 48px;
+    border-radius: 55px;
+    border: 2px solid grey;
+
+
     cursor: pointer; 
+    float:left
+}
+
+.simon-flash {
+        border-radius: 5px;
+
+-webkit-animation: flash linear 1s ;
+	animation: flash linear 1s ;
 }
 
 
@@ -12,8 +24,26 @@
     background: yellow;
 }
 #green{
-    background: green
+    background: green;
 }
 #blue{
     background: blue;
+}
+
+.myTitle{
+    
+    color:#f2f;
+	-webkit-animation: flash linear 1s ;
+	animation: flash linear 1s ;
+    }
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
 }
