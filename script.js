@@ -56,25 +56,30 @@ var simon = {
 };
 
 function lightup(seq) {
-        
-    for (var i = 0; i < seq.length; i++) {
-        var seqselect = (seq[i]);
-        console.log(seqselect);
+    
+ for (var i = 0; i < seq.length; i++) {
+     var seqselect = (seq[i]);
+     console.log(seqselect);
 
-        setTimeout(function () {
-            document.getElementById(seqselect).classList.add('simon-flash');
-            setTimeout(function() {
-                document.getElementById(seqselect).classList.remove('simon-flash');
-            }, 1400);
-
-        }, 1000);
-   
-       
+     setTimeout(flashMe(seqselect), 1000);
+    
+    
+    
 }
 
 }
 
+function flashMe(x){
+ document.getElementById(x).classList.add('simon-flash');
+ flashRemove(x);
+}
 
+function flashRemove(y){
+  setTimeout(function(){
+
+      document.getElementById(y).classList.remove('simon-flash');
+  }, 2000);
+}
 
 
 $(document).ready(function () {
