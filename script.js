@@ -49,30 +49,43 @@ var simon = {
         var nextColor = simon.colors[Math.floor(Math.random()* simon.colors.length)];
         console.log("random color is ", nextColor);  
         simon.sequence.push(nextColor);
-        console.log("the seq is ", simon.sequence)
-        lightup(simon.sequence)
+        console.log("the seq is ", simon.sequence);
+        lightup(simon.sequence);
       
     }
 };
 
-function lightup(seq){
-    for(var i =0; i < seq.length; i++){
-        console.log("yesy yes" + seq[i]);
-        let seqselect = (seq[i]);
-        document.getElementById(seqselect).classList.add('simon-flash');
+function lightup(seq) {
+        
+    for (var i = 0; i < seq.length; i++) {
+        var seqselect = (seq[i]);
+        console.log(seqselect);
 
-    }
+        setTimeout(function () {
+            document.getElementById(seqselect).classList.add('simon-flash');
+            setTimeout(function() {
+                document.getElementById(seqselect).classList.remove('simon-flash');
+            }, 1400);
+
+        }, 1000);
+   
+       
+}
+
 }
 
 
 
 
 $(document).ready(function () {
-    $("#red").click(function () {simon.sendColor(RED)});
-    $("#green").click(function () {simon.sendColor(GREEN)});
-    $("#blue").click(function () {simon.sendColor(BLUE)});
-    $("#yellow").click(function () {simon.sendColor(YELLOW)});
-
+    $("#red").click(function () {
+        simon.sendColor(RED);
+    });
+    $("#green").click(function () {simon.sendColor(GREEN);});
+    $("#blue").click(function () {simon.sendColor(BLUE);});
+    $("#yellow").click(function () {simon.sendColor(YELLOW);});
+    $("#startMe").click(function () {simon.nextSequence();});
+    
 });
 
 
