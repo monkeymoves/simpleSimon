@@ -56,23 +56,35 @@ var simon = {
 };
 
 function lightup(seq) {
-    
+    console.log("this is lightup seq " + seq);
     seq.map(flashMe);
 
 };
 
+
+
 function flashMe(x) {
 
-    setInterval(function () {
+    function removeFlash(){
+
+        setInterval(function () {
+             document.getElementById(x).classList.remove('simon-flash');
+         }, 1000);
+
+    }
+        
+    setTimeout(function(){
+
         document.getElementById(x).classList.add('simon-flash');
-    }, 1000);
+        removeFlash(x);
+        clearInterval(removeFlash);
+    }, 100);
+    
 
-    setTimeout(function () {
-        document.getElementById(x).classList.remove('simon-flash');
-        clearInterval; 
-    }, 2000);
+}
+    
+  
 
-};
 
 
 
