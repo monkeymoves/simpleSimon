@@ -57,29 +57,24 @@ var simon = {
 
 function lightup(seq) {
     
- for (var i = 0; i < seq.length; i++) {
-     var seqselect = (seq[i]);
-     console.log(seqselect);
+    seq.map(flashMe);
 
-     setTimeout(flashMe(seqselect), 1000);
-    
-    
-    
-}
+};
 
-}
+function flashMe(x) {
 
-function flashMe(x){
- document.getElementById(x).classList.add('simon-flash');
- flashRemove(x);
-}
+    setInterval(function () {
+        document.getElementById(x).classList.add('simon-flash');
+    }, 1000);
 
-function flashRemove(y){
-  setTimeout(function(){
+    setTimeout(function () {
+        document.getElementById(x).classList.remove('simon-flash');
+        clearInterval; 
+    }, 2000);
 
-      document.getElementById(y).classList.remove('simon-flash');
-  }, 2000);
-}
+};
+
+
 
 
 $(document).ready(function () {
