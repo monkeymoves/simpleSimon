@@ -64,21 +64,21 @@ function lightup(seq) {
 
 
 function flashMe(x) {
-
-    function removeFlash(){
-
-        setInterval(function () {
-             document.getElementById(x).classList.remove('simon-flash');
-         }, 1000);
-
-    }
-        
+    
     setTimeout(function(){
-
+        
         document.getElementById(x).classList.add('simon-flash');
         removeFlash(x);
         clearInterval(removeFlash);
     }, 100);
+    
+        function removeFlash(){
+    
+            setInterval(function () {
+                 document.getElementById(x).classList.remove('simon-flash');
+             }, 1000);
+    
+        }
     
 
 }
