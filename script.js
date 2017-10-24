@@ -64,26 +64,49 @@ function lightup(seq) {
 
 
 function flashMe(x) {
+
+    function myTimeoutFunction()
+    {
+        $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
+        setInterval(myTimeoutFunction, 1000);
+    }
     
-    setTimeout(function(){
+    myTimeoutFunction(x);
+    
+}
+    // setTimeout(function() {
+    //     var interval = setInterval(function(){
+    
+    //         $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
+    //         clearInterval(interval);
+    //     }, 500);
         
-        document.getElementById(x).classList.add('simon-flash');
-        removeFlash(x);
-        clearInterval(removeFlash);
-    }, 100);
-    
-        function removeFlash(){
-    
-            setInterval(function () {
-                 document.getElementById(x).classList.remove('simon-flash');
-             }, 1000);
-    
-        }
+    // }, 1000);
+
     
 
-}
+
+
+
+    // setTimeout(function(){
+        
+    //     document.getElementById(x).classList.add('simon-flash');
+    //     removeFlash(x);
+    //     clearInterval(removeFlash);
+    // }, 100);
     
-  
+    //     function removeFlash(){
+    
+    //         setTimeout(function () {
+    //              document.getElementById(x).classList.remove('simon-flash');
+    //          }, 1000);
+    
+    //     }
+    
+
+
+    
+
 
 
 
