@@ -57,23 +57,46 @@ var simon = {
 
 function lightup(seq) {
     console.log("this is lightup seq " + seq);
-    seq.map(flashMe);
 
-};
+        seq.map(flashMe);
+
+    };
 
 
 
-function flashMe(x) {
 
-    function myTimeoutFunction()
-    {
-        $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
-        setInterval(myTimeoutFunction, 1000);
-    }
+    function flashMe(x) {
+        
+        setTimeout(function (fade) {
+            
+            $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
+                      
+             }, 500);
+          
+         }
+     
+         
+
+
+// function flashMe(x) {
+   
+
+//     var fade = $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
     
-    myTimeoutFunction(x);
+
+//     function mydelay() {
+
+//         setTimeout(function (fade) {
+
+//             mydelay
+
+//         }, 1500);
+
+
+//     }
+// };
     
-}
+
     // setTimeout(function() {
     //     var interval = setInterval(function(){
     
