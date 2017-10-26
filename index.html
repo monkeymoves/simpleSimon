@@ -15,15 +15,15 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-fluid jumbotron" align="center">
 
 
-    <p> Use the buttons to enter the sequence</p>
+    <h3> Click the colours to enter sequence</h3>
 
 
 
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container-fluid"  >
+      <div class="row col-sm-3 circle-group" >
 
         <div class="simon-button" id="red"> </div>
         <div class="simon-button" id="green"> </div>
@@ -34,10 +34,21 @@
 
     <div class="container-fluid">
       <div class="row">
-        <button type="button" class="btn btn-primary" id="startMe">Start</button>
+        <button type="button" class="btn btn-primary" id="startMe">Start/Reset</button>
+        <!-- <button type="button" class="btn btn-secondary" id="resetMe">Reset</button> -->
+        
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <h2 class="errorClass" id="errorMsg"></h2>
 
       </div>
     </div>
+
+  </div>
+
 
   </div>
 

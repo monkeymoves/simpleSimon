@@ -31,7 +31,8 @@ var simon = {
             else {
                 
                 //lose condiotion
-                alert("Wrong fkd up");
+                // alert("Sorry you entered the wrong sequence");
+                $("#errorMsg").html("Sorry you entered the wrong sequence");
                 simon.sequence = [];
                 simon.step =0;
                 
@@ -45,6 +46,7 @@ var simon = {
     colors: [RED, BLUE, GREEN, YELLOW],
     step: 0,
     nextSequence: function(){
+        $("#errorMsg").html("");
         
         var nextColor = simon.colors[Math.floor(Math.random()* simon.colors.length)];
         console.log("random color is ", nextColor);  

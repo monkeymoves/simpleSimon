@@ -1,12 +1,17 @@
 .simon-button{
-    height: 48px;
-    width: 48px;
+    height: 100px;
+    width: 100px;
     border-radius: 55px;
     border: 2px solid grey;
-
+    margin: 10px;
+    float: left;
 
     cursor: pointer; 
-    float:left
+    
+}
+
+.circle-group{
+     display: inline-block;
 }
 
 .simon-flash {
