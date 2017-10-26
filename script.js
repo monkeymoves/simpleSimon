@@ -55,25 +55,50 @@ var simon = {
     }
 };
 
+
 function lightup(seq) {
     console.log("this is lightup seq " + seq);
+  
+    var counter = 0;
+    var j = 0;
+    var i = setInterval(function() {
+      counter++;
+      flashMe(seq[j]);
+      j++;
+      if (counter === seq.length) {
+        clearInterval(i);
+      }
+    }, 1000); // SET THIS TO HOWEVER LONG YOU WANT TO WAIT BETWEEN "FLASHES" (milliseconds)
+  }
+  
+  function flashMe(x) {
+    console.log("X: " + x);
+    $("#" + x)
+      .fadeTo("slow", 0)
+      .fadeTo("slow", 1);
+  }
+  
 
-        seq.map(flashMe);
 
-    };
+// function lightup(seq) {
+//     console.log("this is lightup seq " + seq);
+
+//         seq.map(flashMe);
+
+//     };
 
 
 
 
-    function flashMe(x) {
+//     function flashMe(x) {
         
-        setTimeout(function (fade) {
+//         setTimeout(function (fade) {
             
-            $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
+//             $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
                       
-             }, 500);
+//              }, 500);
           
-         }
+//          };
      
          
 
