@@ -23,6 +23,15 @@ var simon = {
                     
                 }
                 else {
+                    if(simon.step === 2){
+                        $("#errorMsg").html("Congratulations <br> You won & completed 3 rounds");
+                        simon.step === 0;
+                        var audioWinner = $('<audio autoplay></audio>');
+                        audioWinner.append('<source src="sounds/winner.mp3" type="audio/mp3" />');
+                        
+                        $('[data-action=sound]').html(audioWinner);
+                        
+                    }
                     simon.step++;
                 }
                 
@@ -32,7 +41,13 @@ var simon = {
                 
                 //lose condiotion
                 // alert("Sorry you entered the wrong sequence");
+               
                 $("#errorMsg").html("Sorry you entered the wrong sequence");
+                var audioWrong = $('<audio autoplay></audio>');
+                audioWrong.append('<source src="sounds/wrong.mp3" type="audio/mp3" />');
+               
+                $('[data-action=sound]').html(audioWrong);
+                
                 simon.sequence = [];
                 simon.step =0;
                 
@@ -75,91 +90,18 @@ function lightup(seq) {
   
   function flashMe(x) {
     console.log("X: " + x);
+    
     $("#" + x)
       .fadeTo("slow", 0)
       .fadeTo("slow", 1);
+      var audio = $('<audio autoplay></audio>');
+      audio.append('<source src="sounds/' + x + '.mp3" type="audio/mp3" />');
+      $('[data-action=sound]').html(audio);
+      
+
   }
   
-
-
-// function lightup(seq) {
-//     console.log("this is lightup seq " + seq);
-
-//         seq.map(flashMe);
-
-//     };
-
-
-
-
-//     function flashMe(x) {
-        
-//         setTimeout(function (fade) {
-            
-//             $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
-                      
-//              }, 500);
-          
-//          };
-     
-         
-
-
-// function flashMe(x) {
-   
-
-//     var fade = $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
-    
-
-//     function mydelay() {
-
-//         setTimeout(function (fade) {
-
-//             mydelay
-
-//         }, 1500);
-
-
-//     }
-// };
-    
-
-    // setTimeout(function() {
-    //     var interval = setInterval(function(){
-    
-    //         $("#" + x).fadeTo("slow", 0).fadeTo("slow", 1);
-    //         clearInterval(interval);
-    //     }, 500);
-        
-    // }, 1000);
-
-    
-
-
-
-
-    // setTimeout(function(){
-        
-    //     document.getElementById(x).classList.add('simon-flash');
-    //     removeFlash(x);
-    //     clearInterval(removeFlash);
-    // }, 100);
-    
-    //     function removeFlash(){
-    
-    //         setTimeout(function () {
-    //              document.getElementById(x).classList.remove('simon-flash');
-    //          }, 1000);
-    
-    //     }
-    
-
-
-    
-
-
-
-
+ 
 
 
 $(document).ready(function () {
@@ -169,7 +111,7 @@ $(document).ready(function () {
     $("#green").click(function () {simon.sendColor(GREEN);});
     $("#blue").click(function () {simon.sendColor(BLUE);});
     $("#yellow").click(function () {simon.sendColor(YELLOW);});
-    $("#startMe").click(function () {simon.nextSequence();});
+    $("#startMe").click(function () {simon.sequence = []; simon.nextSequence();});
     
 });
 
