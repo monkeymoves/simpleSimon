@@ -21,27 +21,28 @@
 <audio id="soundbuttonBlu" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
 <audio id="soundbuttonWrong" src="http://www.freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
 
-  <div class="container" align="center">
+  <div class="container">
 
 
     <h3> Click the colours to enter sequence</h3>
 
 
-
-    <div class="container-fluid"  >
-      <div class="row circle-group" >
+      <div class="circle-group" >
 
         <div class="simon-button" id="red"> </div>
         <div class="simon-button" id="green"> </div>
+
+      </div>
+      <div class="circle-group" >
+        
         <div class="simon-button" id="blue"> </div>
         <div class="simon-button" id="yellow"> </div>
       </div>
-    </div>
 
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <button type="button" class="btn btn-primary" id="startMe">Start/Reset</button>
-        <!-- <button type="button" class="btn btn-secondary" id="resetMe">Reset</button> -->
+        <button type="button" class="btn btn-primary" id="startMe"> Start Game</button>
+        <button type="button" class="btn btn-secondary" id="resetMe">Reset Game</button>
         
       </div>
     </div>
@@ -59,7 +60,6 @@
   </div>
 
 
-  </div>
 
   <script src="script.js"></script>
 </body>

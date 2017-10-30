@@ -112,6 +112,7 @@ $(document).ready(function () {
     $("#blue").click(function () {simon.sendColor(BLUE);});
     $("#yellow").click(function () {simon.sendColor(YELLOW);});
     $("#startMe").click(function () {simon.sequence = []; simon.nextSequence();});
+    $("#resetMe").click(function () {simon.sequence = []; simon.nextSequence();});
     
 });
 
