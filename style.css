@@ -23,6 +23,11 @@ h3 {
      
 }
 
+.count{
+    display: inline-block;
+    
+}
+
 .simon-flash {
         border-radius: 5px;
 /* 
