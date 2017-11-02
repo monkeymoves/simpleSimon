@@ -28,6 +28,10 @@ h3 {
     
 }
 
+.info{
+    display: inline-block;
+}
+
 .simon-flash {
         border-radius: 5px;
 /* 

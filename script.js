@@ -8,7 +8,9 @@ var simon = {
     sendColor: function (color) {
         if (!simon.sequence.length) {
             //start a new game
-            simon.nextSequence();
+            alert("please start/reset game");
+            return
+            // simon.nextSequence();
 
         } else {
             
@@ -18,10 +20,10 @@ var simon = {
                     console.log("seq complete")
                     $("#countMe").html(simon.sequence.length);
                     
-                    if(simon.sequence.length === 4){
+                    if(simon.sequence.length === 10){
 
                         
-                                $("#win").html("Congratulations <br> You won & completed 4 rounds");
+                                $("#win").html("Congratulations <br> You won & completed 10 rounds");
                                 var audioWinner = $('<audio autoplay></audio>');
                                 audioWinner.append('<source src="sounds/winner.mp3" type="audio/mp3" />');
                                 $('[data-action=sound]').html(audioWinner);
@@ -44,6 +46,7 @@ var simon = {
                 //lose condiotion
                 $("#errorMsg").html("Sorry you entered the wrong sequence");
                 $(".count").html("");
+                $(".info").html("");
                 
                 var audioWrong = $('<audio autoplay></audio>');
                 audioWrong.append('<source src="sounds/wrong.mp3" type="audio/mp3" />');
@@ -111,12 +114,17 @@ $(document).ready(function () {
         simon.sendColor(YELLOW);
     });
     $("#startMe").click(function () {
+
+        $(".info").html("Rounds complete: ");
         simon.sequence = [];
+        
         simon.nextSequence();
     });
     $("#resetMe").click(function () {
+        $(".info").html("Rounds complete: ");
         simon.sequence = [];
         $("#countMe").html(simon.sequence.length);
+        $("#errorMsg").html("");
         $("#win").html("");
         
     });
