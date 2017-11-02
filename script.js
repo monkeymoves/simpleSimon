@@ -43,6 +43,8 @@ var simon = {
                 
                 //lose condiotion
                 $("#errorMsg").html("Sorry you entered the wrong sequence");
+                $(".count").html("");
+                
                 var audioWrong = $('<audio autoplay></audio>');
                 audioWrong.append('<source src="sounds/wrong.mp3" type="audio/mp3" />');
                 $('[data-action=sound]').html(audioWrong);
