@@ -18,14 +18,16 @@ var simon = {
                     console.log("seq complete")
                     $("#countMe").html(simon.sequence.length);
                     
-                    if(simon.sequence.length === 2){
+                    if(simon.sequence.length === 4){
 
                         
-                                $("#win").html("Congratulations <br> You won & completed 2 rounds");
+                                $("#win").html("Congratulations <br> You won & completed 4 rounds");
                                 var audioWinner = $('<audio autoplay></audio>');
                                 audioWinner.append('<source src="sounds/winner.mp3" type="audio/mp3" />');
                                 $('[data-action=sound]').html(audioWinner);
-                                simon.step === 0;
+                                simon.sequence = [];
+                                simon.step = 0;
+                                return
                                           
                     }
                     
@@ -112,7 +114,9 @@ $(document).ready(function () {
     });
     $("#resetMe").click(function () {
         simon.sequence = [];
-        simon.nextSequence();
+        $("#countMe").html(simon.sequence.length);
+        $("#win").html("");
+        
     });
 
 });
