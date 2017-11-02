@@ -115,13 +115,13 @@ $(document).ready(function () {
     });
     $("#startMe").click(function () {
 
-        $(".info").html("Rounds complete: ");
+        $(".info").html("Round");
         simon.sequence = [];
         
         simon.nextSequence();
     });
     $("#resetMe").click(function () {
-        $(".info").html("Rounds complete: ");
+        $(".info").html("Round");
         simon.sequence = [];
         $("#countMe").html(simon.sequence.length);
         $("#errorMsg").html("");

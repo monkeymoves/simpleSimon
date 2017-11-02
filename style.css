@@ -2,22 +2,25 @@ body {
     background-image: url("BGcircle.jpg");
 }
 
-h3 {
+h2, h3 {
     color: white;
 }
 
 .simon-button{
+    margin: 20px;
     height: 200px;
     width: 200px;
     border-radius: 155px;
-    border: 2px solid grey;
-   
+    border: 15px  rgba;
+    box-shadow: 5px 5px 5px rgba(56, 56, 56, 0.473);    
     cursor: pointer; 
+    
     
 }
 
 .circle-group{
     display: flex;
+    
     justify-content: center;
     align-items: center;
      
@@ -32,11 +35,11 @@ h3 {
     display: inline-block;
 }
 
-.simon-flash {
-        border-radius: 5px;
-/* 
-    -webkit-animation: flash linear 1s ;
-	animation: flash linear 1s ; */
+.buttons{
+
+    
+    margin: 10px;
+   
 }
 
 
@@ -54,7 +57,10 @@ h3 {
 }
 
 container{
+    justify-content: center;
     display: flex;
-    
+    flex-direction: column;
+    text-align: center;
+
     
 }
